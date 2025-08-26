@@ -39,6 +39,9 @@ resource azurerm_linux_virtual_machine "linux_machine" {
     git_repo             = "terragoat"
     yor_trace            = "736ef713-51b8-4178-ad69-406be81f6ef2"
   })
+  admin_ssh_key {
+    public_key = "CKV_ANY"
+  }
 }
 
 resource azurerm_windows_virtual_machine "windows_machine" {
