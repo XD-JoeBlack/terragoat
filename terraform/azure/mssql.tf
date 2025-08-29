@@ -187,126 +187,129 @@ name                         = "mssql7-${var.environment}${random_integer.rnd_in
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy1" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql1.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy2" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql2.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
+
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy3" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql3.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy4" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql4.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy5" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql5.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
+  email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy6" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql6.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
 
 resource "azurerm_mssql_server_security_alert_policy" "alertpolicy7" {
-server_id                  = azurerm_mssql_server.mssql1.id
-  storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
-  retention_in_days          = 90
-  storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key  
-resource_group_name        = azurerm_resource_group.example.name
+  resource_group_name        = azurerm_resource_group.example.name
   server_name                = azurerm_mssql_server.mssql7.name
+
   state                      = "Enabled"
   storage_endpoint           = azurerm_storage_account.security_storage_account.primary_blob_endpoint
   storage_account_access_key = azurerm_storage_account.security_storage_account.primary_access_key
-  disabled_alerts = [
-    "Sql_Injection",
-    "Data_Exfiltration"
-  ]
-  retention_days  = 20
+
+  # enable all alerts
+  disabled_alerts = []
+
+  # keep logs for >= 90 days
+  retention_days  = 90
+
   email_addresses = ["securityengineer@bridgecrew.io"]
+  # optional: email_account_admins = true
 }
+
